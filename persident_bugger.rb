@@ -6,5 +6,19 @@
 # колличество выполненых итераций является искомым результатом
 # возвращаемым из метода
 def persistence(n)
-    
-end
+    str_arr = n.to_s.scan(/./)
+    i = 0
+    while  str_arr.length != 1
+           str_arr = composition(str_arr) 
+           i +=1
+    end
+    i            
+end    
+    def composition(a)
+         rez = 1
+         for item in a do
+            rez = rez * item.to_i
+         end
+         return rez.to_s.scan(/./)     
+    end    
+
